@@ -1,26 +1,42 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Header />
+    <Todo />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue';
+import Todo from './components/Todo.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Header: Header, Todo: Todo },
+};
 </script>
 
 <style>
+/* pc */
+@media (min-width: 1024px) {
+  #app {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* Mobile */
+@media (max-width: 740px) {
+  #app {
+    width: 100%;
+  }
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Helvetica', sans-serif;
+  padding: 0.5rem;
 }
 </style>
